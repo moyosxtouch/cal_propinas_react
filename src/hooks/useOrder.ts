@@ -20,5 +20,9 @@ export default function useOrder() {
   const removeItem = (id: MenuItem["id"]) => {
     setOrder(order.filter((item) => item.id !== id));
   };
-  return { order, addItem, removeItem, tip, setTip };
+  const placeOrder = () => {
+    setOrder([]);
+    setTip(0);
+  };
+  return { order, addItem, removeItem, tip, setTip, placeOrder };
 }
